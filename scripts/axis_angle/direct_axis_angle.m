@@ -54,10 +54,12 @@ else
 
 end 
 
+%% Output File
 % Write matrix on output.txt
 function w = writeInOutput(r, theta, R_axis_angle)
-    %% Output File
+    % Open output file
     fileID = fopen('output.txt', 'a');
+    
     fprintf(fileID, "\nRotation of angle: %f\n", theta);
     fprintf(fileID, "On vector: ");
     for index=(1:3) 
