@@ -30,13 +30,14 @@ R = [   0 0 0;
 %% Insert Symbolic matrix components 
 for row=(1:3)
     for col=(1:3)
-        valore = input("Insert value:") 
-        R(row,col) = valore
-        Sym(row,col) = valore
+        value = input("Insert value:") 
+        R(row,col) = value
+        Sym(row,col) = value
     end
 end
 
 %% IMPORTANT: change values !!!!
+
 % Variable for find theta 
 v_t1 = R(1,3)
 v_t2 = R(2,3)
