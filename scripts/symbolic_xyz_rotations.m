@@ -2,11 +2,11 @@
 % Author: Massimo, Miryam, Leonardo, Federico, Francesco, Paolo
 
 % This script will compute the multiplications of multiple rotation matrix
-% of given angles around specific axies (XYZ) in order for the script to
+% of given angles around specific axes (XYZ) in order for the script to
 % work properly it is necessary to specify the angles names in the symbol 
 % inizialization list.
 % The script take as input the number of rotation that as to be execute and
-% ask for each rotation to specify the rotation axes. The output is the pos
+% ask for each rotation to specify the rotation axis. The output is the post
 % multiplication of all rotation matrices
 
 clc
@@ -35,8 +35,9 @@ Res = eye(3);
 num_of_rotation = input('Insert the numebre of rotation to perform: ');
 for i=(1:num_of_rotation)
     % This loop genarate the proper R matrix for each angle in angles
-    % according to the given axes of rotation taken as input
-    axes = input('Insert an axis of rotation (x, y, z): ', 's');
+    % according to the given axis of rotation taken as input
+
+    axis = input('Insert an axis of rotation (x, y, z): ', 's');
 
     if isequal(axes, 'x')
         R = [   1       0                   0;
@@ -44,12 +45,12 @@ for i=(1:num_of_rotation)
                 0 sin(angles(i))            cos(angles(i));
             ];
 
-    elseif isequal(axes, 'y')
+    elseif isequal(axis, 'y')
         R = [   cos(angles(i))      0       sin(angles(i));
                 0                   1       0;
                 -sin(angles(i))     0       cos(angles(i));
             ];
-    else % isequal(axes, 'z')
+    else % isequal(axis, 'z')
         R = [   cos(angles(i))      -sin(angles(i))     0;
                 sin(angles(i))      cos(angles(i))      0;
                      0              0                   1;
