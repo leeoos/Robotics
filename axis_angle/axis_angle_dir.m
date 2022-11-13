@@ -40,7 +40,7 @@ if (theta <= eps && theta >= -eps)
 
 %  Singular case with theta: +- pi >>> One solution
 elseif (theta == +pi  || theta == -pi)
-    fprintf("Singular case with theta: +- "+ pi +"\n")
+    fprintf("Singular case with theta: +- "+ sym(pi) +"\n")
     s_theta = 0
     c_theta = -1
 
@@ -67,13 +67,15 @@ else
     R_axis_angle = r*r' + (eye(3) - r*r')*c_theta + S*s_theta
 
     % Write matrix opn output
-    fprintf(fileID, "Rotation of: %f \n", theta)
+    fprintf(fileID, "Rotation of: %f \n", sym(theta))
+    fprintf(fileID, "\n")
     writematrix(r','output.txt', 'WriteMode', 'append' , 'Delimiter', 'tab' )
+    fprintf(fileID, "\n")
     fprintf(fileID, "[")
     for row=(1:3)
         for col=(1:3)
             if (col == 3) 
-                fprintf(fileID, "%f]", R_axis_angle(row,col))
+                
             end
             fprintf(fileID, "%f,", R_axis_angle(row,col))
         end
