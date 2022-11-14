@@ -19,6 +19,10 @@ r = [rx; ry; rz]
 s_theta = sin(theta)
 c_theta = cos(theta)
 
+if (!isequal(norm(r), 1))
+    return
+end
+
 %  Singular case with theta: 0 >>> No solution
 if (theta <= eps && theta >= -eps)
     fprintf("Singular case with theta: O >>> No Solution \n")
