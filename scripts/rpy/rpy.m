@@ -37,7 +37,7 @@ angles =   [
 % Accumulator matrix for the product, inizialized as I 3x3 
 Res = eye(3);
 
-sprintf("\n Define the sqequence of rotation axes \n")
+disp('Define the sqequence of rotation axes')
 
 % Note: this code is not 'safe' double check the input 
 % to be sure of the result
@@ -79,7 +79,7 @@ disp("Final Matrix: rotation composition ")
 Res
 
 goon = 0;
-goon = input(sprintf("Continue with inverse problem? "), 's');
+goon = input(sprintf("Continue with numeric evaluation (yes/no)?  "), 's');
 if (isequal(goon, 's') || isequal(goon, 'si') || isequal(goon, 'y') || isequal(goon, 'yes'))
     alpha1 = input('Insert aplha1')
     alpha2 = input('Insert aplha2')
@@ -88,7 +88,7 @@ if (isequal(goon, 's') || isequal(goon, 'si') || isequal(goon, 'y') || isequal(g
 end
 
 goon = 0;
-goon = input(sprintf("Continue with inverse problem? "), 's');
+goon = input(sprintf("Continue with inverse problem (yes/no)? "), 's');
 if isequal(goon, 'n') || isequal(goon, 'no')
     return
 end

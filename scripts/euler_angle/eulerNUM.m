@@ -72,7 +72,7 @@ for i=(1:3)
 
     % Perform the matrix multiplication in a fixed order 
     % Res will contain the composition of rotation at each step
-    Res = R * Res; %% Roll Pitch Yaw 
+    Res = Res * R;
 end
 
 % Final result (composition of all rotation)
