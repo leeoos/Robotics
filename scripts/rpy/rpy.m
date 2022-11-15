@@ -1,13 +1,13 @@
 %% Sopravvivenza_AIRO! 
 % Author: Massimo, Miryam, Leonardo, Federico, Francesco, Paolo
 
-% This script is useful to solve direct and invers euler angles problems:
+% This script is useful to solve direct and invers rpy problems:
 % Diret Problem: 
 %   - the script compute a composition of three rotation matrix
-%     of given angles around moving axes (XYZ). In order for the script to
+%     of given angles around fixed axes (XYZ). In order for the script to
 %     work properly it is useful to specify the angles names in the symbol 
 %     inizialization list. The script take as input for each rotation the rotation 
-%     axis. The output is the post multiplication of all rotation matrices.
+%     axis. The output is the pre multiplication of all rotation matrices.
 %
 %Invers Problem:
 
@@ -18,9 +18,9 @@ close all
 %% Direct Problem
 
 % IMPORTANT: change in the list of simbols and in the array of angles
-% the names of the angles with the name given by the problem
+% the names of the angles with the name given by the problem 
 syms alpha1 alpha2 alpha3  
-%syms phi theta psi
+%syms psi theta phi
 
 angles =   [   
             alpha1
@@ -29,9 +29,9 @@ angles =   [
            ]
 
 %angles =   [   
-%            phi
-%            theta
 %            psi
+%            theta
+%            phi
 %           ]
 
 % Accumulator matrix for the product, inizialized as I 3x3 
@@ -71,7 +71,7 @@ for i=(1:3)
 
     % Perform the matrix multiplication in a fixed order 
     % Res will contain the composition of rotation at each step
-    Res = Res * R;
+    Res = R * Res; %% Roll Pitch Yaw 
 end
 
 % Final result (composition of all rotation)
@@ -96,9 +96,9 @@ disp("\nGiven Rotation Matrix\n")
 R
 
 disp("Args for the first angle")
-x_first = input('arg1: ')
+xT1 = input('arg1: ')
 yT1 = input('arg2: ')
-first = atan2(x_first, yT1)
+first = atan2(xT1, yT1)
 
 disp("Args for the first angle bis")
 xT2 = input('arg1: ')
@@ -129,5 +129,5 @@ disp("First sequence: \n")
 [first, second, third]
 
 disp("Sequence sequence: \n")
-[first_bis, second_bis, third_bis]
+[first_bis, second_bis, psi2]
 
