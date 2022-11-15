@@ -34,6 +34,9 @@ y = R(1,1) + R(2,2) + R(3,3) - 1;
 theta1 = atan2(x,y)
 theta2 = atan2(-x, y)
 
+
+if 
+
 if sin(theta1) ~= 0
     k = 1/(2*sin(theta1));
     r1x = k*(R(3,2) - R(2,3));
@@ -53,4 +56,5 @@ end
 r2 = [r2x; r2y; r2z]
 
 R*r1
-norm(r1)
+R*r2
+norm(r1)*norm(r2)
