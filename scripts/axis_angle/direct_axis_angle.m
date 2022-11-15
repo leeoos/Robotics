@@ -19,7 +19,8 @@ r = [rx; ry; rz]
 s_theta = sin(theta)
 c_theta = cos(theta)
 
-if (!isequal(norm(r), 1))
+if (not(isequal(norm(r), 1)))
+    disp('Error: vector norm not uniary')
     return
 end
 
