@@ -78,6 +78,21 @@ end
 disp("Final Matrix: rotation composition ")
 Res
 
+goon = 0;
+goon = input(sprintf("Continue with inverse problem? "), 's');
+if (isequal(goon, 's') || isequal(goon, 'si') || isequal(goon, 'y') || isequal(goon, 'yes'))
+    alpha1 = input('Insert aplha1')
+    alpha2 = input('Insert aplha2')
+    alpha3 = input('Insert aplha3')
+    subs(Res)
+end
+
+goon = 0;
+goon = input(sprintf("Continue with inverse problem? "), 's');
+if isequal(goon, 'n') || isequal(goon, 'no')
+    return
+end
+
 %% Inverse Problem
 
 % Inizializing a rotation matrix to be filled

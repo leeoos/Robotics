@@ -22,10 +22,10 @@ close all
 syms alpha1 alpha2 alpha3  
 %syms psi theta phi
 
-angles =   [   
-            alpha1
-            alpha2
-            alpha3
+angles =   [     
+            -pi/2
+            -pi/4
+             pi/4
            ]
 
 %angles =   [   
@@ -77,72 +77,3 @@ end
 % Final result (composition of all rotation)
 disp("Final Matrix: rotation composition ")
 Res
-
-goon = 0;
-goon = input(sprintf("Continue with inverse problem? "), 's');
-if (isequal(goon, 's') || isequal(goon, 'si') || isequal(goon, 'y') || isequal(goon, 'yes'))
-    alpha1 = input('Insert aplha1')
-    alpha2 = input('Insert aplha2')
-    alpha3 = input('Insert aplha3')
-    subs(Res)
-end
-
-goon = 0;
-goon = input(sprintf("Continue with inverse problem? "), 's');
-if isequal(goon, 'n') || isequal(goon, 'no')
-    return
-end
-
-%% Inverse Problem
-
-% Inizializing a rotation matrix to be filled
-R=eye(3);
-
-disp("Insert Rotation matrix values")
-%% Insert rotation matrix components 
-for row=(1:3)
-    for col=(1:3)
-        value = input(sprintf("Insert value (%d,%d):", row, col));
-        R(row,col) = value;
-    end
-end
-
-disp("\nGiven Rotation Matrix\n")
-R
-
-disp("Args for the first angle")
-xT1 = input('arg1: ')
-yT1 = input('arg2: ')
-first = atan2(xT1, yT1)
-
-disp("Args for the first angle bis")
-xT2 = input('arg1: ')
-yT2 = input('arg2: ')
-first_bis = atan2(xT2, yT2)
-
-disp("Args for the second angle")
-xF1 = input('arg1: ')
-yF1 = input('arg2: ')
-second = atan2(xF1, yF1)
-
-disp("Args for the second angle bis")
-xF2 = input('arg1: ')
-yF2 = input('arg2: ')
-second_bis = atan2(xF2, yF2)
-
-disp("Args for the third angle")
-xP1 = input('arg1: ')
-yP1 = input('arg2: ')
-third = atan2(xP1, yP1)
-
-disp("Args for the third angle bis")
-xP2 = input('arg1: ')
-yP2 = input('arg2: ')
-third_bis = atan2(xP2, yP2)
-
-disp("First sequence: \n")
-[first, second, third]
-
-disp("Sequence sequence: \n")
-[first_bis, second_bis, psi2]
-
