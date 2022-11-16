@@ -12,15 +12,21 @@ eps = 10^-10;
 %% Inverse Problem
 
 % We generate a 3x3 Rotation Matrix, that after we want to fill
-R = zeros(3,3);
+%R = zeros(3,3);
+%
+%% Insert numbers of your Rotation Matrix
+%for row=(1:3)
+%    for col=(1:3)
+%        value = input(sprintf("Insert value (%d,%d)", row, col));
+%        R(row,col) = value;
+%    end
+%end
 
-% Insert numbers of your Rotation Matrix
-for row=(1:3)
-    for col=(1:3)
-        value = input(sprintf("Insert value (%d,%d)", row, col));
-        R(row,col) = value;
-    end
-end
+
+R = [ 0 0 0;
+      0 0 0;
+      0 0 0;]
+
 
 % We print the Matrix for Inverse Problem
 R

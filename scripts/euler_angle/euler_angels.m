@@ -96,16 +96,21 @@ end
 %% Inverse Problem
 
 % Inizializing a rotation matrix to be filled
-R=eye(3);
+% R=eye(3);
 
 disp("Insert Rotation matrix values")
 %% Insert rotation matrix components 
-for row=(1:3)
-    for col=(1:3)
-        value = input(sprintf("Insert value (%d,%d):", row, col));
-        R(row,col) = value;
-    end
-end
+%for row=(1:3)
+%    for col=(1:3)
+%        value = input(sprintf("Insert value (%d,%d):", row, col));
+%        R(row,col) = value;
+%    end
+%end
+%
+
+R = [ 0  0  0;
+      0  0  0;
+      0  0  0;]
 
 disp("\nGiven Rotation Matrix\n")
 R
