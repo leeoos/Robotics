@@ -20,7 +20,7 @@ DHTABLE = [  -pi/2 sym('a1') sym('d1') sym('t1');
              pi sym('a3') sym('d3') sym('t3');
              pi/2 sym('a4') sym('d4') sym('t4');
              -pi/2 sym('a5') sym('d5') sym('t5');
-             0 sym('a6') sym('d6') sym('t6')];
+             0 sym('a6') sym('d6') sym('t6')]
 
 
          
@@ -44,6 +44,7 @@ for i = 1:N
     d = DHTABLE(i,3);
     theta = DHTABLE(i,4);
     A{i} = subs(TDH);
+    A{i}
 end
 
 %% Direct kinematics
