@@ -10,17 +10,15 @@ syms alpha d a theta
 
 %% number of joints of SCARA (in general you have to insert input)
 
-N=6; % va cambiato a seconda dell'esigenza 
+N=3; % va cambiato a seconda dell'esigenza 
 
 %% Insert DH table of parameters of SCARA
 
 %% a and d are variable 
 DHTABLE = [  -pi/2 sym('a1') sym('d1') sym('t1');
-             0 sym('a2') sym('d2') sym('t2') ;
-             pi sym('a3') sym('d3') sym('t3');
-             pi/2 sym('a4') sym('d4') sym('t4');
-             -pi/2 sym('a5') sym('d5') sym('t5');
-             0 sym('a6') sym('d6') sym('t6')]
+             -pi/2 sym('a2') sym('d2') sym('t2');
+              pi/2 sym('a3') sym('d3') sym('t3');
+          ]
 
 
          
@@ -66,28 +64,23 @@ for i=1:N
 end
 
 % output TN matrix
-
 T0N = T
 
 % output ON position
-
-p = T(1:3,4)
+p = T(1:3,4);
 
 % output xN axis
-
-n=T(1:3,1)
+n=T(1:3,1);
 
 % output yN axis
-
 s=T(1:3,2);
 
 % output zN axis
-
-a=T(1:3,3)
+a=T(1:3,3);
 
 %% end
 
-
+% VALUE TO CHANGE
 a1 = 0; 
 a2 = -612.7;
 a3 = 571.6;
@@ -109,5 +102,5 @@ t4 = -pi/2;
 t5 = 0;
 t6 = 0;
 
-subs(T)
+NumericT = subs(T)
 

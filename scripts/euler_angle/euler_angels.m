@@ -6,10 +6,12 @@
 %   - the script compute a composition of n rotation matrix
 %     of given angles around moving axes (XYZ). In order for the script to
 %     work properly it is useful to specify the angles names in the symbol 
-%     inizialization list. The script take as input for each rotation the rotation 
-%     axis. The output is the post multiplication of all rotation matrices.
+%     inizialization list. The script take as input the number of rotations
+%     for each rotation the rotation  axis. 
+%     The output is the Post-multiplication of all rotation matrices.
 %
-%Invers Problem:
+%Invers Problem: 
+%   - use inverse formula
 
 clc
 clear all
