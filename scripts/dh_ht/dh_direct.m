@@ -6,7 +6,7 @@ clc
 
 %% Define symbolic variables
 
-syms alpha d a theta
+syms alpha d a theta 
 
 %% number of joints of SCARA (in general you have to insert input)
 
@@ -20,7 +20,7 @@ DHTABLE = [  -pi/2 sym('a1') sym('d1') sym('t1');
              pi sym('a3') sym('d3') sym('t3');
              pi/2 sym('a4') sym('d4') sym('t4');
              -pi/2 sym('a5') sym('d5') sym('t5');
-             0 sym('a6') sym('d6') sym('t6')];
+             0 sym('a6') sym('d6') sym('t6')]
 
 
          
@@ -44,6 +44,8 @@ for i = 1:N
     d = DHTABLE(i,3);
     theta = DHTABLE(i,4);
     A{i} = subs(TDH);
+    fprintf(" %d-A-%d",i-1, i)
+    A{i}
 end
 
 %% Direct kinematics
@@ -59,6 +61,8 @@ T = eye(4);
 for i=1:N 
     T = T*A{i};
     T = simplify(T);
+    fprintf(" %d-T-%d",i-1, i)
+    T
 end
 
 % output TN matrix
@@ -75,10 +79,35 @@ n=T(1:3,1)
 
 % output yN axis
 
-s=T(1:3,2)
+s=T(1:3,2);
 
 % output zN axis
 
 a=T(1:3,3)
 
 %% end
+
+
+a1 = 0; 
+a2 = -612.7;
+a3 = 571.6;
+a4 = 0;
+a5 = 0;
+a6 = 0;
+
+d1 = 128;
+d2 = 0;
+d3 = 0;
+d4 = 163.9;
+d5 = -115.7;
+d6 = 92.2;
+
+t1 = 0;
+t2 = pi/2;
+t3 = pi;
+t4 = -pi/2;
+t5 = 0;
+t6 = 0;
+
+subs(T)
+
