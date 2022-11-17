@@ -96,7 +96,7 @@ end
 %% Inverse Problem
 
 % Inizializing a rotation matrix to be filled
-R=eye(3);
+%R=eye(3);
 
 disp("Insert Rotation matrix values")
 %% Insert rotation matrix components 

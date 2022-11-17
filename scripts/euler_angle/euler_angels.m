@@ -37,7 +37,7 @@ angles =   [
 % Accumulator matrix for the product, inizialized as I 3x3 
 Res = eye(3);
 
-sprintf("\n Define the sqequence of rotation axes \n")
+disp(" Define the sqequence of rotation axes ")
 
 % Note: this code is not 'safe' double check the input 
 % to be sure of the result
