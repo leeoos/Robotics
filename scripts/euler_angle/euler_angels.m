@@ -3,7 +3,7 @@
 
 % This script is useful to solve direct and invers euler angles problems:
 % Diret Problem: 
-%   - the script compute a composition of three rotation matrix
+%   - the script compute a composition of n rotation matrix
 %     of given angles around moving axes (XYZ). In order for the script to
 %     work properly it is useful to specify the angles names in the symbol 
 %     inizialization list. The script take as input for each rotation the rotation 
@@ -37,11 +37,13 @@ angles =   [
 % Accumulator matrix for the product, inizialized as I 3x3 
 Res = eye(3);
 
+num_of_rotation = input('How many rotation: ');
+
 disp(" Define the sqequence of rotation axes ")
 
 % Note: this code is not 'safe' double check the input 
 % to be sure of the result
-for i=(1:3)
+for i=(1:num_of_rotation)
     % This loop genarate the proper R matrix for each angle in angles
     % according to the given axis of rotation taken as input
 
