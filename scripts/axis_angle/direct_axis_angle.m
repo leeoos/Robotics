@@ -38,7 +38,7 @@ elseif (theta == +pi  || theta == -pi)
     c_theta = -1
 
     % Rotation by Axis Angle
-    R_axis_angle = 2*r*(r') - eye(3)
+    R_axis_angle = 2*r*(transpose(r)) - eye(3)
 
     writeInOutput(r, theta, R_axis_angle);
 
@@ -52,7 +52,7 @@ else
     S = [0, -rz, ry; rz, 0, -rx; -ry, rx, 0] %%check
 
     % Rotation by Axis Angle
-    R_axis_angle = r*(r)' + (eye(3) - r*(r)')*c_theta + S*s_theta
+    R_axis_angle = r*(transpose(r)) + (eye(3) - r*(transpose(r)))*c_theta + S*s_theta
 
     writeInOutput(r, theta, R_axis_angle);
     
