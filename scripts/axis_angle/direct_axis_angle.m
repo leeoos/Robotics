@@ -7,6 +7,7 @@ close all
 
 %% Define Parameters
 eps = 10^-10;
+eps_norm = 10^-4
 
 %% Insert values for rotation vector and angle
 rx = input("Insert rx ");
@@ -20,7 +21,7 @@ s_theta = sin(theta)
 c_theta = cos(theta)
 
 %% Check if vector norm is 1 (else is not valid)
-if (not(isequal(norm(r), 1)))
+if not(abs(norm(r)-1) <= eps_norm)
     disp('Error: vector norm not uniary')
     return
 end

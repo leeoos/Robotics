@@ -49,6 +49,7 @@ elseif isequal(theta1, pi) % or theta2 = -pi
                 strcat(char(177), string(ry_sing1)); 
                 strcat(char(177), string(rz_sing1));]
 
+
 else % sin(theta1) ~= 0 and sin(theta2) ~= 0
 
     fprintf("We are in regular case :) because sin(theta1): %f sin(theta2): %f \n", sin(theta1), sin(theta2));
